@@ -1,0 +1,2 @@
+# DivyaSchool
+Online Educational Platform
