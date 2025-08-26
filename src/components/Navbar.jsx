@@ -31,6 +31,16 @@ export default function Navbar() {
     return () => document.removeEventListener('click', handler);
   }, [langOpen]);
 
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
   return (
     <nav className="fixed top-0 w-full z-30 bg-opacity-90 bg-blue-50 dark:bg-gray-800 shadow-lg backdrop-blur-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 py-2">
@@ -52,14 +62,13 @@ export default function Navbar() {
               🌐 {LANG_OPTIONS.find(l => l.code === i18n.resolvedLanguage)?.label || 'Language'}
             </button>
             {langOpen && (
-              <div className="absolute right-0 mt-2 bg-white dark:bg-gray-700 rounded shadow-xl border dark:border-gray-600 min-w-[120px] overflow-hidden"
-                style={{ zIndex: 80 }}
+              <div className="absolute right-0 mt-2 bg-white dark:bg-gray-700 rounded shadow-xl border dark:border-gray-600 min-w-[120px] overflow-hidden z-50"
                 onClick={e => e.stopPropagation()}
               >
                 {LANG_OPTIONS.map(opt => (
                   <button
                     key={opt.code}
-                    className={`w-full px-4 py-2 text-left hover:bg-blue-100/70 dark:hover:bg-gray-600 transition`}
+                    className="w-full px-4 py-2 text-left hover:bg-blue-100/70 dark:hover:bg-gray-600 transition"
                     onClick={() => { i18n.changeLanguage(opt.code); setLangOpen(false); }}
                   >{opt.label}</button>
                 ))}
@@ -69,10 +78,10 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Hamburger */}
-        <div className="flex md:hidden items-center gap-2">
+        <div className="flex items-center md:hidden gap-2">
           <DarkToggle dark={dark} setDark={setDark} />
           <button
-            className="p-2 rounded-md hover:bg-blue-100/60 dark:hover:bg-gray-700 transition"
+            className="p-2 rounded-md hover:bg-blue-100/60 dark:hover:bg-gray-700 transition outline-none focus:ring-2 focus:ring-blue-400"
             onClick={() => setMenuOpen(m => !m)}
             aria-label="Open navigation menu"
           >
@@ -81,7 +90,7 @@ export default function Navbar() {
         </div>
       </div>
       {/* Mobile Nav Drawer */}
-      <div className={`block md:hidden transition-all duration-300 ${menuOpen ? 'max-h-[500px] py-2' : 'max-h-0 py-0 overflow-hidden'}`}>
+      <div className={`md:hidden transition-[max-height,padding] duration-300 bg-blue-50/95 dark:bg-gray-800 backdrop-blur-lg shadow-lg overflow-hidden ${menuOpen ? 'max-h-[400px] py-3' : 'max-h-0 py-0'}`}>
         <div className="flex flex-col gap-2 px-5 pb-2">
           <NavLinks t={t} onClick={() => setMenuOpen(false)} />
           {/* Language button in mobile dropdown */}
@@ -93,7 +102,7 @@ export default function Navbar() {
               🌐 {LANG_OPTIONS.find(l => l.code === i18n.resolvedLanguage)?.label || 'Language'}
             </button>
             {langOpen && (
-              <div className="absolute left-0 right-0 mt-1 bg-white dark:bg-gray-700 rounded shadow-xl border dark:border-gray-600 min-w-[120px] overflow-hidden z-20"
+              <div className="absolute left-0 right-0 mt-1 bg-white dark:bg-gray-700 rounded shadow-xl border dark:border-gray-600 min-w-[120px] overflow-hidden z-50"
                 onClick={e => e.stopPropagation()}
               >
                 {LANG_OPTIONS.map(opt => (
@@ -116,15 +125,14 @@ export default function Navbar() {
 function NavLinks({ t, onClick = () => {} }) {
   return (
     <>
-      <Link to="/courses"       className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('courses')}</Link>
-      <Link to="/practice-lab"  className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('practiceLab')}</Link>
-      <Link to="/bihar-pride"   className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('biharPride')}</Link>
+      <Link to="/courses"        className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('courses')}</Link>
+      <Link to="/practice-lab"   className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('practiceLab')}</Link>
+      <Link to="/bihar-pride"    className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('biharPride')}</Link>
       <Link to="/download-center" className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('downloadCenter')}</Link>
-      <Link to="/dashboard"     className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('dashboard')}</Link>
-      <Link to="/tuteVideo"     className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('Videos')}</Link>
-      <Link to="/contact"       className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('contact')}</Link>
-      <Link to="/events"       className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('Events')}</Link>
-
+      <Link to="/dashboard"      className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('dashboard')}</Link>
+      <Link to="/tuteVideo"      className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('Videos')}</Link>
+      <Link to="/contact"        className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('contact')}</Link>
+      <Link to="/events"         className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('Events')}</Link>
     </>
   );
 }

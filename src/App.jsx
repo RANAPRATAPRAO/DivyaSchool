@@ -30,7 +30,7 @@ import Events from './pages/Tournaments';
 
 export default function App() {
   return (
-    <div className="min-h-screen" style={{ background: "var(--main-bg)", color: "var(--main-text)" }}>
+    <div className="bg-white dark:bg-gray-900 min-h-screen">
     <Router>
       <Navbar />
       <Routes>
