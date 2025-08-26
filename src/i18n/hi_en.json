@@ -1,0 +1,120 @@
+{
+    "appName": "Divya School",
+    "tagline": "Bihar mein future ko shaktishaali banaate hain",
+    "welcome": "Class 1 se 10 ke liye mazedaar, inspiring platform!",
+    "courses": "Courses",
+    "practiceLab": "Practice Lab",
+    "biharPride": "Bihar Ki Shaan",
+    "downloadCenter": "Download Center",
+    "dashboard": "Dashboard",
+    "contact": "Contact Karein",
+    "adminPanel": "Admin Panel",
+    "explore": "Jaanein",
+    "classX": "Class {{number}}",
+    "classSubjects": "Class {{number}} ke Subjects",
+    "downloads": "Downloads",
+    "download": "Download Karein",
+    "samplePapers": "Sample Papers",
+    "completed": "Ho gaya",
+    "yourScore": "Aapka Score: {{score}} me se {{total}}",
+    "allClasses": "Saari Classes",
+    "completedQuizzes": "Complete Hue Quizzes",
+    "badges": "Badges",
+    "contactUs": "Contact Karein",
+    "yourName": "Aapka Naam",
+    "yourEmail": "Aapka Email",
+    "yourMessage": "Aapka Message",
+    "sendMessage": "Message Bhejein",
+    "thankYou": "Humein Contact Karne Ke Liye Dhanyavaad!",
+    "adminFeature": "Study Materials upload karein, students ko manage karein, quiz questions add karein, etc.",
+    "startQuiz": "Quiz Shuru Karein",
+    "funActivities": "Masti Bhari Learning",
+    "funActivitiesDesc": "Quizzes, MCQ aur games jo padhai ko mazedaar banayein.",
+    "practiceLabDesc": "Interactive quizzes karein, badges paayein aur apna score dekhein!",
+    "biharPrideDesc": "Bihar ke legends, culture aur achievements jaanein!",
+    "exploreCourses": "Courses Dekhein",
+    "tryPracticeLab": "Practice Lab Try Karein",
+    "newsletterPlaceholder": "Aapka email...",
+    "newsletterSubscribe": "Subscribe Karein",
+    "rightsReserved": "Sabhi adhikar surakshit hain.",
+    "dashboardGreeting": "Dashboard par swagat hai! Apni journey track karo aur roz kuchh naya sikho.",
+    "courseCompletion": "Course Complete Hone Ka Percentage",
+    "keepGoing": "Chalte raho!",
+    "dailyStreak": "Current Streak",
+    "daysInARow": "Din lagataar!",
+    "quizSummary": "Quiz Stats",
+    "quizHistory": "Quiz Ka Itihaas",
+    "score": "Score",
+    "totalScore": "Total Score",
+    "classRanking": "Aapki Class Ranking",
+    "rank": "Rank",
+    "name": "Naam",
+    "getInTouch": "Get in Touch",
+    "contactInfoDesc": "Humein aapki baatein sunna pasand hai! Prashn ya feedback ke liye contact karein.",
+    "sports": "Sports",
+"sportsDesc": "Holistic growth ke liye sports aur mentorship activities.",
+"mentorTitle": "Hamari Visheshataein",
+"mentorTagline": "Hum aapko best mentor aur career experts se jodte hain.",
+"mentorIntro": "Hamara platform students ko 1-on-1 mentorship aur personalized career guidance deta hai, jisse future ki tayyari aasan ho jaati hai.",
+"mentorship": "Mentorship",
+"mentorshipDesc": "Experienced mentors se personal guidance paayein. Sessions book karein aur apni potential unlock karein!",
+"careerGuidance": "Career Guidance",
+"guidanceDesc": "Careers explore karein, expert advice paayein, apni safalta ki raah chunin.",
+"mentorshipHighlight": "Mentorship Program",
+"personalMentor": "Har student ke liye personal mentor",
+"regularSessions": "Regular doubt-solving aur guidance",
+"subjectMentors": "School subjects aur olympiad ke mentors",
+"joinMentorship": "Aur Jaanein & Join Karein",
+"careerGuidanceHighlight": "Career Guidance",
+"expertPanel": "Experts se advice paayein",
+"streamSelection": "10th ya 12th ke baad stream chunein",
+"examPrep": "Competitive exams ki tayyari mein madad",
+"getGuidance": "Aur Jaanein & Guidance paayein",
+"askAnything": "Kuch bhi poochho...",
+"exploreSports": "Sports Explore Karein",
+  "sportsJoined": "Aap sports mein enroll ho gaye hain!",
+
+  
+  
+  
+  "mentorshipHow": "Hamara mentorship program interactive hai, personal hai, aur confidence aur skills build karne mein proven hai.",
+  
+  "joinMentorshipDesc": "Kya aap ready ho grow karne ke liye? Hamara mentorship program join karein aur dedicated support & learning ke zariye apni potential unlock karo.",
+  "enrollNow": "Abhi Enroll Karein",
+ 
+  "sportsHow": "Hamara sports program world-class coaching aur mazedar competition laata hai, taaki har student apni strengths khoje aur active rehna pasand kare.",
+  "joinSports": "Sports Join Karein",
+  "joinSportsTitle": "Sports Join Karein",
+  "joinSportsDesc": "Chalo active ho jao! Sports enrichment mein join karo—coaches, friends, aur fun aapke liye.",
+  "knowBihar": "Bihar ko jaaniye!",
+  "legends": [
+    {
+      "name": "Dr. Rajendra Prasad",
+      "desc": "Bharat ke pehle Rashtrapati, freedom struggle ke leader, aur unki simplicity aur leadership ke liye jane jate hain.",
+      "field": "Politics"
+    },
+    {
+      "name": "Aryabhatta",
+      "desc": "Mashhoor ganitgyani aur Jyotishacharya, Aryabhatiya kitab aur zero/trigonometry mein yogdan ke liye famous.",
+      "field": "Science"
+    },
+    {
+      "name": "Shehnai Maestro Bismillah Khan",
+      "desc": "Duniya bhar ke shehnai vadak, jinhone Bihar ki classical music ko international bana diya.",
+      "field": "Music"
+    }
+  ],
+  "facts": [
+    { "icon": "🗺️", "title": "Location", "desc": "Bihar Purvi India mein hai, bahut si nadiyon aur upjaau maidaan ke saath." },
+    { "icon": "🌾", "title": "Krishi", "desc": "Chawal, gehun, dal, ganna — Bihar laakhon logon ko khilata hai." },
+    { "icon": "🎓", "title": "Shiksha", "desc": "Nalanda aur Vikramshila duniya ke famous purane vishwa-vidyalay the." },
+    { "icon": "🤝", "title": "Sanskriti", "desc": "Chhath Puja, Sonepur Mela, aur anya teharon mein Bihar ka friendly nature dikhta hai." },
+    { "icon": "🏛️", "title": "Itihas", "desc": "Buddha, Mahavir, Ashok ki bhoomi—Bihar ne dharm aur history ko shape diya." },
+    { "icon": "🥘", "title": "Khana", "desc": "Litti Chokha, Sattu Paratha, Thekua—Bihar ke yummy khaane." }
+  ]
+}
+
+
+
+
+
