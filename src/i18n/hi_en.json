@@ -111,7 +111,35 @@
     { "icon": "🤝", "title": "Sanskriti", "desc": "Chhath Puja, Sonepur Mela, aur anya teharon mein Bihar ka friendly nature dikhta hai." },
     { "icon": "🏛️", "title": "Itihas", "desc": "Buddha, Mahavir, Ashok ki bhoomi—Bihar ne dharm aur history ko shape diya." },
     { "icon": "🥘", "title": "Khana", "desc": "Litti Chokha, Sattu Paratha, Thekua—Bihar ke yummy khaane." }
-  ]
+  ],
+
+  
+  "mentorshipEnrollTitle": "Mentorship Enrollment",
+  "mentorshipEnrollDesc": "Ab apna personal mentor paayein.",
+  "mentorshipPersonal": "Personal mentor milega",
+  "mentorshipSessions": "Special mentorship sessions",
+  "mentorshipSupport": "Lagatar learning support",
+  
+  "sportsEnrollTitle": "Sports Program Enrollment",
+  "sportsEnrollDesc": "Sports coaching, fitness events, aur zyada ke liye sign up karein.",
+  "sportsCoaching": "Best coaching faculty",
+  "sportsEvents": "Regular sports events",
+  "sportsGrowth": "Dimaag aur shareer ka development",
+
+  "careerEnrollTitle": "Career Guidance Enrollment",
+  "careerEnrollDesc": "Personal guidance se apni journey shuru karein.",
+  "careerPanel": "Experts se guidance",
+  "careerExploration": "Stream/Course selection help",
+  "careerExams": "Exam/Study planning",
+
+  "formName": "Aapka naam",
+  "formEmail": "Email address",
+  "formMobile": "Mobile number",
+  "formMore": "Aur kuch (optional)",
+  "formSubmit": "Submit karein",
+  "formSuccess": "Shukriya! Hum jaldi sampark karenge."
+
+
 }
 
 

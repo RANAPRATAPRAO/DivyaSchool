@@ -102,18 +102,34 @@ export default function Navbar() {
               🌐 {LANG_OPTIONS.find(l => l.code === i18n.resolvedLanguage)?.label || 'Language'}
             </button>
             {langOpen && (
-              <div className="absolute left-0 right-0 mt-1 bg-white dark:bg-gray-700 rounded shadow-xl border dark:border-gray-600 min-w-[120px] overflow-hidden z-50"
-                onClick={e => e.stopPropagation()}
+              <div
+                className="fixed inset-0 z-50"
+                style={{ pointerEvents: 'auto' }}
+                onClick={() => setLangOpen(false)}
               >
-                {LANG_OPTIONS.map(opt => (
-                  <button
-                    key={opt.code}
-                    className="w-full px-4 py-2 text-left hover:bg-blue-100/70 dark:hover:bg-gray-600 transition"
-                    onClick={() => { i18n.changeLanguage(opt.code); setLangOpen(false); setMenuOpen(false); }}
-                  >{opt.label}</button>
-                ))}
+                <div
+                  className="absolute left-4 right-4 bottom-8 max-w-xs mx-auto bg-white dark:bg-gray-700 rounded shadow-xl border dark:border-gray-600 overflow-y-auto max-h-60 ring-2 ring-blue-100"
+                  style={{ zIndex: 9999 }}
+                  onClick={e => e.stopPropagation()}
+                >
+                  {LANG_OPTIONS.map(opt => (
+                    <button
+                      key={opt.code}
+                      type="button"
+                      className="w-full px-4 py-2 text-left hover:bg-blue-100/70 dark:hover:bg-gray-600 transition"
+                      onClick={e => {
+                        e.stopPropagation();
+                        i18n.changeLanguage(opt.code);
+                        setLangOpen(false);
+                        setMenuOpen(false);
+                      }}
+                    >{opt.label}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
+
           </div>
         </div>
       </div>
@@ -122,17 +138,17 @@ export default function Navbar() {
 }
 
 // Navigation links component for reuse
-function NavLinks({ t, onClick = () => {} }) {
+function NavLinks({ t, onClick = () => { } }) {
   return (
     <>
-      <Link to="/courses"        className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('courses')}</Link>
-      <Link to="/practice-lab"   className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('practiceLab')}</Link>
-      <Link to="/bihar-pride"    className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('biharPride')}</Link>
+      <Link to="/courses" className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('courses')}</Link>
+      <Link to="/practice-lab" className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('practiceLab')}</Link>
+      <Link to="/bihar-pride" className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('biharPride')}</Link>
       <Link to="/download-center" className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('downloadCenter')}</Link>
-      <Link to="/dashboard"      className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('dashboard')}</Link>
-      <Link to="/tuteVideo"      className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('Videos')}</Link>
-      <Link to="/contact"        className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('contact')}</Link>
-      <Link to="/events"         className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('Events')}</Link>
+      <Link to="/dashboard" className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('dashboard')}</Link>
+      <Link to="/tuteVideo" className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('Videos')}</Link>
+      <Link to="/contact" className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('contact')}</Link>
+      <Link to="/events" className="py-1 px-2 text-blue-700 dark:text-cyan-200 rounded hover:bg-blue-100 dark:hover:bg-cyan-900 transition" onClick={onClick}>{t('Events')}</Link>
     </>
   );
 }

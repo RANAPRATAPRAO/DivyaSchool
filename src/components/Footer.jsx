@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
   FaFacebook,
@@ -51,12 +52,12 @@ export default function Footer() {
             items-center md:items-start justify-center md:justify-normal"
           aria-label={t("quickLinks") || "Quick Links"}
         >
-          <FooterLink href="/courses" label={t("courses")} />
-          <FooterLink href="/practice-lab" label={t("practiceLab")} />
-          <FooterLink href="/bihar-pride" label={t("biharPride")} />
-          <FooterLink href="/download-center" label={t("downloadCenter")} />
-          <FooterLink href="/dashboard" label={t("dashboard")} />
-          <FooterLink href="/contact" label={t("contact")} />
+          <FooterLink to="/courses" label={t("courses")} />
+          <FooterLink to="/practice-lab" label={t("practiceLab")} />
+          <FooterLink to="/bihar-pride" label={t("biharPride")} />
+          <FooterLink to="/download-center" label={t("downloadCenter")} />
+          <FooterLink to="/dashboard" label={t("dashboard")} />
+          <FooterLink to="/contact" label={t("contact")} />
         </nav>
 
         {/* Social & Newsletter */}
@@ -141,20 +142,22 @@ export default function Footer() {
   );
 }
 
-function FooterLink({ href, label }) {
+// Use <Link> for internal navigation!
+function FooterLink({ to, label }) {
   return (
-    <a
-      href={href}
+    <Link
+      to={to}
       className="text-base font-semibold px-2 py-1 rounded transition
       hover:bg-cyan-100 dark:hover:bg-cyan-950 hover:text-cyan-600 dark:hover:text-cyan-200 hover:underline focus:outline-none
       focus:ring-2 focus:ring-cyan-400"
       tabIndex={0}
     >
       {label}
-    </a>
+    </Link>
   );
 }
 
+// For social icons (external links only!)
 function FooterIcon({ link, label, color, Icon }) {
   return (
     <a
@@ -167,7 +170,7 @@ function FooterIcon({ link, label, color, Icon }) {
       focus:outline-none focus:ring-2 focus:ring-cyan-300`}
       tabIndex={0}
       role="button"
-      style={{ minWidth: 44, minHeight: 44 }} // Large touch target
+      style={{ minWidth: 44, minHeight: 44 }}
     >
       <Icon size={22} />
     </a>

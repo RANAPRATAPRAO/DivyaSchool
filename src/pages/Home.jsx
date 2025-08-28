@@ -59,14 +59,14 @@ export default function ObysEnhancedCometPage() {
       subtitle: t('mentorshipHighlight'),
       points: [t('personalMentor'), t('regularSessions'), t('subjectMentors')],
       cometColor: "#22d3ee",
-      btn: { href: "/mentorship", label: t('joinMentorship'), color: "bg-cyan-600 dark:bg-cyan-700 hover:bg-cyan-700 dark:hover:bg-cyan-950" },
+      btn: { href: "/#mentorship", label: t('joinMentorship'), color: "bg-cyan-600 dark:bg-cyan-700 hover:bg-cyan-700 dark:hover:bg-cyan-950" },
     },
     {
       emoji: "🚀",
       subtitle: t('careerGuidanceHighlight'),
       points: [t('expertPanel'), t('streamSelection'), t('examPrep')],
       cometColor: "#fbbf24",
-      btn: { href: "/career-guidance", label: t('getGuidance'), color: "bg-yellow-400 dark:bg-yellow-700 hover:bg-yellow-500 dark:hover:bg-yellow-900" },
+      btn: { href: "/#career-guidance", label: t('getGuidance'), color: "bg-yellow-400 dark:bg-yellow-700 hover:bg-yellow-500 dark:hover:bg-yellow-900" },
     },
     {
       emoji: "🏆",
@@ -77,7 +77,7 @@ export default function ObysEnhancedCometPage() {
         "Holistic development for mind + body"
       ],
       cometColor: "#34d399",
-      btn: { href: "/sports", label: t('exploreSports') || "Explore Sports", color: "bg-emerald-400 dark:bg-emerald-700 hover:bg-emerald-600 dark:hover:bg-emerald-900" },
+      btn: { href: "/#sports", label: t('exploreSports') || "Explore Sports", color: "bg-emerald-400 dark:bg-emerald-700 hover:bg-emerald-600 dark:hover:bg-emerald-900" },
     },
   ];
 

@@ -79,6 +79,7 @@ export default function CareerGuidance() {
 
       {/* Highlights */}
       <motion.section 
+      id="career-guidance"
         initial={{ opacity: 0, scale: 0.97, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 0.26, duration: 0.6 }}

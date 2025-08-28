@@ -112,6 +112,34 @@
     { "icon": "🤝", "title": "Culture", "desc": "Chhath Puja, Sonepur Mela, and more show Bihar’s friendly spirit." },
     { "icon": "🏛️", "title": "History", "desc": "Home to Buddha, Mahavira, Ashoka—Bihar shaped world religions." },
     { "icon": "🥘", "title": "Food", "desc": "Litti Chokha, Sattu Paratha, Thekua: favorite foods from Bihar." }
-  ]
+  ],
+
+  
+  "mentorshipEnrollTitle": "Mentorship Enrollment",
+  "mentorshipEnrollDesc": "Get matched with your personal mentor now.",
+  "mentorshipPersonal": "Personal Mentor assigned",
+  "mentorshipSessions": "Exclusive mentorship sessions",
+  "mentorshipSupport": "Ongoing learning support",
+
+  "sportsEnrollTitle": "Sports Program Enrollment",
+  "sportsEnrollDesc": "Sign up for sports coaching, fitness events and more.",
+  "sportsCoaching": "Top-level coaching",
+  "sportsEvents": "Regular sports events",
+  "sportsGrowth": "Mind and body growth",
+
+  "careerEnrollTitle": "Career Guidance Enrollment",
+  "careerEnrollDesc": "Start your journey with personalized guidance.",
+  "careerPanel": "Guidance by experts",
+  "careerExploration": "Stream/Course selection help",
+  "careerExams": "Exam/study planning",
+
+  "formName": "Your Name",
+  "formEmail": "Email Address",
+  "formMobile": "Mobile Number",
+  "formMore": "Tell us more (optional)",
+  "formSubmit": "Submit",
+  "formSuccess": "Thank you! We will contact you soon."
+
+
 }
 

@@ -1,14 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 // Animated SVG Blobs
 function RippleBG({ className = "" }) {
   return (
     <svg viewBox="0 0 800 600" className={`absolute left-0 top-0 w-full h-full z-0 pointer-events-none ${className}`}>
-      <circle cx="400" cy="250" r="150" fill="none" stroke="#38bdf8" strokeWidth="1.5" opacity="0.10"/>
-      <circle cx="400" cy="250" r="235" fill="none" stroke="#a7f3d0" strokeWidth="1.8" opacity="0.08"/>
-      <circle cx="400" cy="250" r="320" fill="none" stroke="#a5b4fc" strokeWidth="2" opacity="0.07"/>
+      <circle cx="400" cy="250" r="150" fill="none" stroke="#38bdf8" strokeWidth="1.5" opacity="0.10" />
+      <circle cx="400" cy="250" r="235" fill="none" stroke="#a7f3d0" strokeWidth="1.8" opacity="0.08" />
+      <circle cx="400" cy="250" r="320" fill="none" stroke="#a5b4fc" strokeWidth="2" opacity="0.07" />
     </svg>
   );
 }
@@ -27,7 +28,7 @@ export default function MentorshipSports() {
   const { t } = useTranslation();
 
   return (
-    <main className="relative min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-tr from-[#f0fdfa] via-blue-100 to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-slate-900 overflow-hidden pb-7">
+    <main className="relative min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-tr from-[#f0fdfa] via-blue-100 to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-slate-900 overflow-hidden pb-7 pt-20">
       <Blob className="top-[-88px] left-[-120px] w-[330px] opacity-50 z-0" color="#7dd3fc" />
       <Blob className="bottom-[-100px] right-[-96px] w-[390px] opacity-35 z-0" color="#a7f3d0" />
       <RippleBG />
@@ -48,6 +49,7 @@ export default function MentorshipSports() {
       <div className="relative w-full max-w-6xl min-h-[440px] flex flex-col md:grid md:grid-cols-2 gap-5 z-10">
         {/* Mentorship Card */}
         <motion.section
+          id="mentorship"
           initial={{ opacity: 0, x: -40, y: -30, scale: 0.95 }}
           animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
           transition={{ duration: 1.05, type: "spring" }}
@@ -77,6 +79,7 @@ export default function MentorshipSports() {
         </motion.section>
         {/* Sports Card */}
         <motion.section
+          id="sports"
           initial={{ opacity: 0, x: 40, y: 32, scale: 0.95 }}
           animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
           transition={{ duration: 1.1, type: "spring" }}
@@ -106,7 +109,7 @@ export default function MentorshipSports() {
         </motion.section>
       </div>
 
-      {/* Join sections - LESS gap for mobile! */}
+      {/* Join sections */}
       <div className="w-full flex flex-col md:flex-row items-center justify-center gap-5 mt-7 mb-3 z-20 max-w-4xl">
         <motion.section
           id="join-mentorship"
@@ -124,7 +127,7 @@ export default function MentorshipSports() {
           </p>
           <motion.a
             whileHover={{ scale: 1.04 }}
-            href="/enroll-mentorship"
+            href="/enroll/mentorship"
             className="inline-block px-5 py-2 rounded-full bg-cyan-700 text-white font-bold mt-2 shadow hover:bg-cyan-900 transition"
           >
             {t('enrollNow')}
@@ -146,7 +149,7 @@ export default function MentorshipSports() {
           </p>
           <motion.a
             whileHover={{ scale: 1.04 }}
-            href="/enroll-sports"
+            href="/enroll/sports"
             className="inline-block px-5 py-2 rounded-full bg-amber-500 text-white font-bold mt-2 shadow hover:bg-amber-700 transition"
           >
             {t('enrollNow')}
