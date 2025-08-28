@@ -71,6 +71,18 @@ export default function App() {
       />
     }
   />
+  <Route
+    path="/enroll/career-guidance"
+    element={
+      <EnrollObysCard
+        icon="👨‍🏫"
+        programKey="career-guidance"
+        primaryColor="bg-cyan-700"
+        gradient="from-cyan-100 via-blue-100 to-emerald-100"
+        features={["mentorshipPersonal", "mentorshipSessions", "mentorshipSupport"]}
+      />
+    }
+  />
       </Routes>
       <Footer />
       {/* Add Footer and mobile navigation if desired */}

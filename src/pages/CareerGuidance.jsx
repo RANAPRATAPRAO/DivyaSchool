@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { FaLightbulb, FaQuestionCircle, FaUserGraduate } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaLightbulb, FaQuestionCircle, FaUserGraduate, FaChevronDown } from "react-icons/fa";
 
 const careerFaqs = [
   {
@@ -36,7 +37,7 @@ export default function CareerGuidance() {
   const [faqOpen, setFaqOpen] = useState(null);
 
   return (
-    <main className="relative min-h-screen w-full flex flex-col items-center px-2 pb-12 bg-gradient-to-tr from-[#e0fcef] via-blue-100 to-blue-50 dark:from-[#192c23] dark:via-gray-900 dark:to-slate-900 transition-colors overflow-hidden">
+    <main className="relative min-h-screen w-full flex flex-col items-center px-2 pb-12 bg-gradient-to-tr from-[#e0fcef] via-blue-100 to-blue-50 dark:from-[#192c23] dark:via-gray-900 dark:to-slate-900 transition-colors overflow-hidden pt-16">
       <Blob className="top-[-90px] left-[-130px] w-[340px] opacity-45 z-0" color="#7fffd4" />
       <Blob className="bottom-[-100px] right-[-70px] w-[350px] opacity-30 z-0" color="#6ce0f1" />
 
@@ -65,21 +66,20 @@ export default function CareerGuidance() {
           {t('guidanceDesc')}
         </motion.p>
         <div className="flex flex-col items-center">
-          <motion.a
-            whileHover={{ scale: 1.07, backgroundColor: "#22d3ee", color: "#fff" }}
-            href="/career-guidance/apply"
-            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-emerald-400 dark:bg-blue-700 text-white text-lg font-bold shadow-lg mb-2 transition"
+          <Link
+            to="/enroll/career-guidance"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-emerald-400 dark:bg-blue-700 text-white text-lg font-bold shadow-lg mb-2 transition hover:scale-105"
           >
             <FaLightbulb className="mr-2 -mt-1 text-yellow-200 dark:text-yellow-400" />
             {t('getGuidance')}
-          </motion.a>
+          </Link>
           <span className="text-sm text-cyan-600 dark:text-cyan-200 mt-2 opacity-80">{t('joinMentorshipDesc')}</span>
         </div>
       </motion.section>
 
       {/* Highlights */}
-      <motion.section 
-      id="career-guidance"
+      <motion.section
+        id="career-guidance"
         initial={{ opacity: 0, scale: 0.97, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 0.26, duration: 0.6 }}
@@ -92,20 +92,27 @@ export default function CareerGuidance() {
         </ul>
       </motion.section>
       
-      {/* FAQ */}
+      {/* FAQ with chevron */}
       <section className="z-10 w-full max-w-xl mx-auto mt-3 mb-2">
         <h2 className="text-2xl font-bold text-cyan-700 dark:text-cyan-100 mb-4 flex items-center gap-2">
           <FaQuestionCircle className="text-cyan-300 mb-1" />
-          Frequently Asked Questions
+          {t("faqTitle") || "Frequently Asked Questions"}
         </h2>
         {careerFaqs.map((faq, i) => (
           <div key={faq.q} className="mb-2">
             <button
               onClick={() => setFaqOpen(faqOpen === i ? null : i)}
-              className="w-full text-left py-3 px-4 rounded-lg font-medium transition bg-cyan-50 dark:bg-gray-800 text-cyan-800 dark:text-cyan-200 hover:bg-emerald-50 dark:hover:bg-cyan-800 shadow-sm focus:outline-none"
+              className="w-full text-left flex items-center justify-between py-3 px-4 rounded-lg font-medium transition bg-cyan-50 dark:bg-gray-800 text-cyan-800 dark:text-cyan-200 hover:bg-emerald-50 dark:hover:bg-cyan-800 shadow-sm focus:outline-none"
               aria-expanded={faqOpen === i}
             >
-              {faq.q}
+              <span>{faq.q}</span>
+              <motion.span
+                initial={false}
+                animate={{ rotate: faqOpen === i ? 180 : 0 }}
+                transition={{ duration: 0.25 }}
+              >
+                <FaChevronDown className={`ml-2 transition-transform duration-300 ${faqOpen === i ? 'text-emerald-500' : 'text-cyan-500'}`} />
+              </motion.span>
             </button>
             <AnimatePresence>
               {faqOpen === i && (

@@ -69,13 +69,13 @@ export default function MentorshipSports() {
           <p className="italic text-cyan-700 dark:text-cyan-200 text-base opacity-80 mb-3">
             {t("mentorshipHow")}
           </p>
-          <motion.a
-            whileHover={{ scale: 1.06 }}
-            href="#join-mentorship"
-            className="inline-block mt-1 px-7 py-2.5 font-bold rounded-full shadow-lg bg-cyan-600 dark:bg-cyan-800 text-white text-base md:text-lg transition-all"
+          {/* Fixed: use Link, not anchor tag */}
+          <Link
+            to="/enroll/mentorship"
+            className="inline-block mt-1 px-7 py-2.5 font-bold rounded-full shadow-lg bg-cyan-600 dark:bg-cyan-800 text-white text-base md:text-lg transition-all hover:scale-105"
           >
             {t('joinMentorship')}
-          </motion.a>
+          </Link>
         </motion.section>
         {/* Sports Card */}
         <motion.section
@@ -99,13 +99,12 @@ export default function MentorshipSports() {
           <p className="italic text-orange-700 dark:text-amber-200 text-base opacity-80 mb-3">
             {t('sportsHow')}
           </p>
-          <motion.a
-            whileHover={{ scale: 1.06 }}
-            href="#join-sports"
-            className="inline-block mt-1 px-7 py-2.5 font-bold rounded-full shadow-lg bg-amber-400 dark:bg-amber-700 text-white text-base md:text-lg transition-all"
+          <Link
+            to="/enroll/sports"
+            className="inline-block mt-1 px-7 py-2.5 font-bold rounded-full shadow-lg bg-amber-400 dark:bg-amber-700 text-white text-base md:text-lg transition-all hover:scale-105"
           >
             {t('joinSports')}
-          </motion.a>
+          </Link>
         </motion.section>
       </div>
 
@@ -125,13 +124,12 @@ export default function MentorshipSports() {
           <p className="text-sm md:text-base text-gray-700 dark:text-cyan-100 mb-1">
             {t('joinMentorshipDesc')}
           </p>
-          <motion.a
-            whileHover={{ scale: 1.04 }}
-            href="/enroll/mentorship"
+          <Link
+            to="/enroll/mentorship"
             className="inline-block px-5 py-2 rounded-full bg-cyan-700 text-white font-bold mt-2 shadow hover:bg-cyan-900 transition"
           >
             {t('enrollNow')}
-          </motion.a>
+          </Link>
         </motion.section>
         <motion.section
           id="join-sports"
@@ -147,13 +145,12 @@ export default function MentorshipSports() {
           <p className="text-sm md:text-base text-amber-900 dark:text-amber-100 mb-1">
             {t('joinSportsDesc')}
           </p>
-          <motion.a
-            whileHover={{ scale: 1.04 }}
-            href="/enroll/sports"
+          <Link
+            to="/enroll/sports"
             className="inline-block px-5 py-2 rounded-full bg-amber-500 text-white font-bold mt-2 shadow hover:bg-amber-700 transition"
           >
             {t('enrollNow')}
-          </motion.a>
+          </Link>
         </motion.section>
       </div>
     </main>
